@@ -103,7 +103,6 @@ class App(tk.Tk):
         text = "sheesh".encode("utf-8") #self.ttsInput.get(1.0, "end-1c").encode("UTF-8")
         hash = hashlib.sha256(text).hexdigest()
         audioPath = os.path.join(self.c.Meta.rootPath, self.c.Meta.tempDirectory, f"{hash}.wav")
-        print(audioPath)
         if self.ttsHash != hash:
             try:
                 tts = gTTS(text=text, lang=self.c.Meta.ttsLanguage)
